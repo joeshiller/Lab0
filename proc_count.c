@@ -5,8 +5,7 @@
 #include <linux/sched.h>
 
 
-//Define a pointer to a proc_dir_entry struct called entry. 
-//This will be used to create and remove the virtual file in the /proc filesystem.
+//This struct is used to create and remove the virtual file
 static struct proc_dir_entry *entry;
 
 
