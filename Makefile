@@ -1,3 +1,8 @@
+README_FILE=README.md
+UID = $(shell cat ${README_FILE} | grep '\#\# UID'| grep -oe '\([0-9.]*\)')
+SUBMISSION_FILES = proc_count.c ${README_FILE}
+
+
 ifneq ($(KERNELRELEASE),)
 obj-m := proc_count.o
 else
@@ -15,3 +20,6 @@ install:
 clean:
 	$(MAKE) -C $(KDIR) M=$$PWD clean
 endif
+
+tar:
+	@tar -cf ${UID}-lab0-submission.tar ${SUBMISSION_FILES}
