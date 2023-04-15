@@ -5,8 +5,9 @@
 #include <linux/sched.h>
 
 
-//This struct is used to create/remove the virtual file
-static struct proc_entry *entry;
+//Define a pointer to a proc_dir_entry struct called entry. 
+//This will be used to create and remove the virtual file in the /proc filesystem.
+static struct proc_dir_entry *entry;
 
 
 static int proc_count(struct seq_file *m, void *v){
@@ -33,6 +34,6 @@ static void __exit proc_count_exit(void)
 module_init(proc_count_init);
 module_exit(proc_count_exit);
 
-MODULE_AUTHOR("Joseph S”);
-MODULE_DESCRIPTION("Return current num of running processes");
+MODULE_AUTHOR("Joseph S");
+MODULE_DESCRIPTION("Return num of running processes");
 MODULE_LICENSE("GPL");
